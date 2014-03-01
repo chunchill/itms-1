@@ -17,6 +17,7 @@
     "angular": "~1.2.13",
     "angular-route": "~1.2.13",
     "jquery": "~2.1.0",
-    "jqueryui": "~1.10.4"
+    "jqueryui": "~1.10.4",
+    "angular-animate": "~1.2.13"
   }
 }
