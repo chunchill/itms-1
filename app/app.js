@@ -1,11 +1,10 @@
-'use strict'
+(function() {
+    'use strict'
 
-angular.module('itmsApp',['ngRoute'])
-    .config(function($routeProvider,$locationProvider){
-        $routeProvider
-            .when('/maintainNetwork',{
-                templateUrl: 'app/templates/maintainNetwork.html' 
-            });
-        
-        //$locationProvider.html5Mode(true);
+    var app = angular.module('itmsApp', ['ngRoute']);
+
+// app.run until app.config finished!!! this is important
+    app.run(function(){
+        console.log('app started!!!!');
     });
+}());

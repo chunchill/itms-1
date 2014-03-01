@@ -1318,7 +1318,7 @@
                         </button>
                         <ul class="dropdown-menu pull-right">
                             <li>
-                            <a href="javascript:void(0)" data-target="#myaction" data-toggle="modal"> <i class="fa fa-edit"></i>  事件处理</a>
+                            <a data-target="#myaction" data-toggle="modal"> <i class="fa fa-edit"></i>  事件处理</a>
                             </li>
                             <li>
                             <a href="javascript:void(0)"> <i class="fa fa-cloud-download "></i> 导出</a>
@@ -1471,7 +1471,7 @@
                     <div class="widget-body-toolbar">
                         <div class="alert alert-block alert-success">
                             <a class="close" data-dismiss="alert" href="#">×</a>
-                            <h4 class="alert-heading"><i class="fa fa-search"></i> 需求编号: ER0001</h4>
+                            <h4 class="alert-heading"><i class="fa fa-search"></i> 需求编号: {{selectedOrder.number}}</h4>
                         </div>
 
                         <div class="panel-group smart-accordion-default" id="accordion-2">
@@ -1494,14 +1494,18 @@
                                                 <div class="row">
                                                     <section class="col col-2">
                                                         <label class="select">
-                                                            <select name="prov">
-                                                                <option value="0" selected="" disabled="">订单类型</option>
-                                                                <option value="244">紧急</option>
-                                                                <option value="1">预付</option>
-                                                                <option value="2">监控</option>
-                                                                <option value="3">索赔</option>
-                                                                <option value="4">统配</option>
-                                                        </select> <i class="fa fa-check-square"></i></label>
+                                                            
+                                                            <label class="input">
+                                                                <input type="text" placeholder="订单类型" value={{selectedOrder.type}}>
+                                                            </label>
+                                                            <!--<select name="prov">-->
+                                                                <!--<option value="0" selected="{{selectedOrder.type}}" disabled="">订单类型</option>-->
+                                                                <!--<option value="244">紧急</option>-->
+                                                                <!--<option value="1">预付</option>-->
+                                                                <!--<option value="2">监控</option>-->
+                                                                <!--<option value="3">索赔</option>-->
+                                                                <!--<option value="4">统配</option>-->
+                                                        <!--</select> --><i class="fa fa-check-square"></i></label>
                                                     </section>
                                                     <section class="col col-2">
                                                         <label class="select">
@@ -2791,68 +2795,68 @@
 <div class="modal fade" id="myaction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-        &times;
-    </button>
-    <h4 class="modal-title">
-        <img src="img/banner.png" width="100" alt="iTMS">
-    </h4>
-</div>
-<div class="modal-body no-padding">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    <img src="img/banner.png" width="100" alt="iTMS">
+                </h4>
+            </div>
+            <div class="modal-body no-padding">
 
-    <form action="" id="login-form" class="smart-form">
+                <form action="" id="login-form" class="smart-form">
 
-        <fieldset>
-            <div class="row">
-                <section class="col col-3">
-                    <div class="btn-group">
-                        <button class="btn btn-lg dropdown-toggle  btn-default" data-toggle="dropdown"><i class="fa  fa-bolt"></i>
-                            动作清单 <i class="fa fa-caret-down"></i>
+                    <fieldset>
+                        <div class="row">
+                            <section class="col col-3">
+                                <div class="btn-group">
+                                    <button class="btn btn-lg dropdown-toggle  btn-default" data-toggle="dropdown"><i class="fa  fa-bolt"></i>
+                                        动作清单 <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu pull-left  js-status-update">
+                                        <li>
+                                        <a href="javascript:void(0)"><i class="fa  fa-bolt"></i>  起运开始</a>
+                                        </li>
+                                        <li>
+                                        <a href="javascript:void(0)"><i class="fa  fa-bolt"></i>  配送开始 </a>
+                                        </li>
+                                        <li class="disabled">
+                                        <a href="javascript:void(0)"> <i class="fa  fa-eye "></i>  配送完成 </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="col col-8">
+                                <label class="textarea textarea-resizable state-disabled">
+                                    <textarea class="custom-scroll" disabled="disabled" rows="3" style="height: 64px;" >该动作将更新运单状态至"配送开始"</textarea>
+                                </label>
+
+                            </section>
+
+                        </div>
+                        <div class="row">
+
+                        </div>
+
+
+
+                    </fieldset>
+
+                    <footer>
+                        <button type="submit" class="btn btn-success">
+                            确认
                         </button>
-                        <ul class="dropdown-menu pull-left  js-status-update">
-                            <li>
-                            <a href="javascript:void(0)"><i class="fa  fa-bolt"></i>  起运开始</a>
-                            </li>
-                            <li>
-                            <a href="javascript:void(0)"><i class="fa  fa-bolt"></i>  配送开始 </a>
-                            </li>
-                            <li class="disabled">
-                            <a href="javascript:void(0)"> <i class="fa  fa-eye "></i>  配送完成 </a>
-                            </li>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            返回
+                        </button>
 
-                        </ul>
-                    </div>
-                </section>
-                <section class="col col-8">
-                    <label class="textarea textarea-resizable state-disabled">
-                        <textarea class="custom-scroll" disabled="disabled" rows="3" style="height: 64px;" >该动作将更新运单状态至"配送开始"</textarea>
-                    </label>
+                    </footer>
+                </form>						
 
-                </section>
 
             </div>
-            <div class="row">
-
-            </div>
-
-
-
-        </fieldset>
-
-        <footer>
-            <button type="submit" class="btn btn-success">
-                确认
-            </button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-                返回
-            </button>
-
-        </footer>
-    </form>						
-
-
-</div>
 
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
