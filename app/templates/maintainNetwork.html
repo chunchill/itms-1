@@ -1,5 +1,6 @@
 ﻿<!-- Bread crumb is created dynamically -->
 <!-- row -->
+
 <div class="row">
 	
 	<!-- col -->
@@ -27,7 +28,7 @@
 	-->
 
 <!-- widget grid -->
-<section id="widget-grid" class="">
+<section id="widget-grid" class="" ng-controller="networkCtrl">
 
 	<!-- row -->
 	<div class="row">
@@ -169,7 +170,7 @@
 
 	<!-- row -->
 
-                <div class="row">
+    <div class="row">
 
 		<!-- NEW COL START -->
 		<article class="col-sm-12 col-md-12 col-lg-12">
@@ -1368,90 +1369,27 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+                                <tr ng-repeat="order in orderlist">
 									<td>
 										<label class="checkbox">
 											<input type="checkbox" name="checkbox-inline">
 											<i></i>
 										</label>
 									</td>
-									<td>EO001</td>
-									<td>1</td>
-									<td>001</td>
-									<td>预付</td>
-									<td>普通</td>
-									<td>上海通用</td>
-									<td>南京4S</td>
-									<td>江苏</td>
-									<td>南京</td>
-									<td>下关</td>
-									<td>2014-4-1</td>
-									<td>空运</td>
+                                    <td>{{order.number}}</td>
+                                    <td>{{order.er}}</td>
+                                    <td>{{order.eritn}}</td>
+                                    <td>{{order.type}}</td>
+                                    <td>{{order.special}}</td>
+                                    <td>{{order.delivery}}</td>
+                                    <td>{{order.receiver}}</td>
+                                    <td>{{order.provice}}</td>
+                                    <td>{{order.city}}</td>
+                                    <td>{{order.distact}}</td>
+                                    <td>{{order.deliveryDate}}</td>
+                                    <td>{{order.deliveryMethod}}</td>
 									<td><i class="fa fa-search"></i></td>
-								</tr>
-								<tr>
-									<td>
-										<label class="checkbox">
-											<input type="checkbox" name="checkbox-inline">
-											<i></i>
-										</label>
-									</td>
-									<td>EO002</td>
-									<td>2</td>
-									<td>001</td>
-									<td>加急</td>
-									<td>危险品</td>
-									<td>欧莱雅</td>
-									<td>福州大洋经典</td>
-									<td>福建</td>
-									<td>福州</td>
-									<td>鼓楼区</td>
-									<td>2014-4-1</td>
-									<td>第三方</td>
-									<td><i class="fa fa-search"></i></td>
-								</tr>
-								<tr>
-									<td>
-										<label class="checkbox">
-											<input type="checkbox" name="checkbox-inline">
-											<i></i>
-										</label>
-									</td>
-									<td>EO004</td>
-									<td>3</td>
-									<td>001</td>
-									<td>统配</td>
-									<td>普通</td>
-									<td>上汽临港</td>
-									<td>成都4S</td>
-									<td>四川</td>
-									<td>成都</td>
-									<td>五羊区</td>
-									<td>2014-4-1</td>
-									<td>空运</td>
-									<td><i class="fa fa-search"></i></td>
-								</tr>
-								<tr>
-									<td>
-										<label class="checkbox">
-											<input type="checkbox" name="checkbox-inline">
-											<i></i>
-										</label>
-									</td>
-									<td>EO002</td>
-									<td>3</td>
-									<td>002</td>
-									<td>统配</td>
-									<td>普通</td>
-									<td>上汽临港</td>
-									<td>成都4S</td>
-									<td>四川</td>
-									<td>成都</td>
-									<td>五羊区</td>
-									<td>2014-4-1</td>
-									<td>空运</td>
-									<td><i class="fa fa-search"></i></td>
-								</tr>
+                                </tr>
 							</tbody>
 						</table>
 
