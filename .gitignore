@@ -5,3 +5,11 @@ dist
 app/bower_components
 .idea
 *.log
+ajax
+css
+fonts
+img
+js
+less
+php
+sound

@@ -778,3 +778,20 @@ function drawBreadCrumb()
    });
 
 }
+
+// SHORTCUT ANIMATE SHOW
+function shortcut_buttons_show() {
+    $.shortcut_dropdown.animate({
+        height: "show"
+    }, 200, "easeOutCirc")
+    $.root_.addClass('shortcut-on');
+}
+
+function shortcut_buttons_hide() {
+    $.shortcut_dropdown.animate({
+        height: "hide"
+    }, 300, "easeOutCirc");
+    $.root_.removeClass('shortcut-on');
+
+}
+
